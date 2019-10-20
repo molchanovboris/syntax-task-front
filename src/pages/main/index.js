@@ -77,11 +77,13 @@ export class Protected extends React.Component {
   }
 
   changeTaskStatus = (taskId, data) => {
-    // this.props.updateTask(taskId, data);
+    this.props.updateTask(taskId, data);
+    console.log('update');
   }
 
   removeTask = (taskId) => {
-    // this.props.deleteTask(taskId);
+    this.props.deleteTask(taskId);
+    console.log('remove');
   }
 
   render() {
@@ -106,8 +108,8 @@ export class Protected extends React.Component {
               <TasksList
                 tasks={tasks}
                 // Fixed изменил на this.changeTaskStatus() и this.removeTask()
-                changeTaskStatus={this.changeTaskStatus()}
-                removeTask={this.removeTask()}
+                changeTaskStatus={this.changeTaskStatus}
+                removeTask={this.removeTask}
               />
               <StyledRow>
                 {!this.state.showNewTaskForm

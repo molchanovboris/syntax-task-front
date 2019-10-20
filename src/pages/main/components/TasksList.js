@@ -8,12 +8,12 @@ const TasksList = ({ tasks, changeTaskStatus, removeTask }) => {
     const elements = tasks.map((task) => {
       return (
         <li>
-          {/* <Task
+          <Task
             key={task._id}
             task={task}
             changeTaskStatus={changeTaskStatus}
             removeTask={removeTask}
-          /> */}
+          />
         </li>
       );
     })
