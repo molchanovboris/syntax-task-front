@@ -1,0 +1,55 @@
+#root {
+  height: 100%
+}
+
+body {
+  font-size: 18px !important;
+  color: rgb(168,168,168) !important;
+}
+
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+  top: -7px;
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 0;
+  left: 0;
+  border: 1px solid rgb(168,168,168);
+  border-radius: 3px;
+  background-color: white;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 15px;
+  border: solid rgb(168,168,168);
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 2px;
+  left: 8px;
+}
+
+@-webkit-keyframes rotating {
+  from {
+      -webkit-transform: rotate(0deg);
+  }
+  to {
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+.my-error-messages {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+}
