@@ -51,7 +51,7 @@ class Header extends React.PureComponent {
   }
 
   logout = () => {
-    localStorage.removeItem('спиды');
+    localStorage.removeItem('token');
     history.push('/login');
   }
 

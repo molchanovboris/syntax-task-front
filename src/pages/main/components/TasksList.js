@@ -7,9 +7,8 @@ const TasksList = ({ tasks, changeTaskStatus, removeTask }) => {
   try {
     const elements = tasks.map((task) => {
       return (
-        <li>
+        <li key={task._id}>
           <Task
-            key={task._id}
             task={task}
             changeTaskStatus={changeTaskStatus}
             removeTask={removeTask}

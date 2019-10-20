@@ -54,7 +54,7 @@ const renderSelectField = ({
 const TaskForm = (props) => {
   const { handleSubmit } = props;
   return (
-    <StyledForm onSubmit={handleSubmit()}>
+    <StyledForm onSubmit={handleSubmit}>
       <Row>
         <Col xs="6">
           <Field name="name" label="New task" component={renderInputField} type="text" />
@@ -97,7 +97,7 @@ const validate = (values) => {
   if (!values.name) {
     errors.name = 'You must enter a new task name!';
   }
-  if (!values.priority) {
+  if (!values.priority || values.priority === 'Select') {
     errors.priority = 'You must select a priority!';
   }
 

@@ -49,7 +49,7 @@ const FontIcon = styled(FontAwesomeIcon)`
 export class Protected extends React.Component {
   state = {
     showNewTaskForm: true,
-  }
+  };
 
   async componentDidMount() {
     await this.props.checkAuth();
@@ -65,15 +65,11 @@ export class Protected extends React.Component {
 
 
   showNewTaskForm = () => {
-    this.setState(({ showNewTaskForm }) => ({
-      showNewTaskForm: !showNewTaskForm,
-    }));
+    this.setState({ showNewTaskForm: true });
   }
 
   hideNewTaskForm = () => {
-    this.setState((state) => ({
-      showNewTaskForm: false,
-    }));
+    this.setState({ showNewTaskForm: false });
   }
 
   changeTaskStatus = (taskId, data) => {
@@ -114,7 +110,7 @@ export class Protected extends React.Component {
               <StyledRow>
                 {!this.state.showNewTaskForm
                   && (
-                    <Button color="link" onClick={this.showNewTaskForm.bind(user)}>
+                    <Button color="link" onClick={this.showNewTaskForm}>
                       <FontIcon icon={faPlus} />
                     </Button>
                   )}

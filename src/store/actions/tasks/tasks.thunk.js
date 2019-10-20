@@ -13,10 +13,10 @@ export const getTasks = () => async (dispatch) => {
 };
 
 //Fixed добавил dispatch
-export const addTask = () => async (dispatch) => {
+export const addTask = (values) => async (dispatch) => {
   dispatch(actions.addTaskRequest());
   try {
-    const response = await axiosInstance.post('/api/tasks');
+    const response = await axiosInstance.post('/api/tasks', values);
     dispatch(actions.addTaskSuccess(response.data));
   } catch (err) {
     dispatch(actions.addTaskFailure(err));
